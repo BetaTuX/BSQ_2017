@@ -8,6 +8,8 @@
 #ifndef __MY_LIB__
 #define __MY_LIB__
 
+int unbrlen(unsigned int nb, char base);
+int nbrlen(int nb);
 char *convert_base(char const *nbr, char const *base_from, char const *base_to);
 int my_find_prime_sup(int nb);
 int my_getnbr_base(char const *str, char const *base);

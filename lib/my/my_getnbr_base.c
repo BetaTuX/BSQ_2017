@@ -49,7 +49,7 @@ int my_getnbr_base(char const *str, char const *base)
 	int act_dig_ind;
 	int b_len = my_strlen(base);
 
-	for (;str[cpt] != '\0'; cpt++) {
+	for (;str[cpt] != '\0' && str[cpt] != '\n'; cpt++) {
 		act_dig_ind = ind_from_base(str[cpt], base);
 		if ((act_dig_ind == -1) &&
 		((str[cpt] != '+' || str[cpt] != '-') && nb_mode))

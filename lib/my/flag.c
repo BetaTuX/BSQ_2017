@@ -10,31 +10,6 @@
 #include "my.h"
 #include "my_printf.h"
 
-static int unbrlen(unsigned int nb, char base);
-static int nbrlen(int nb);
-
-int unbrlen(unsigned int nb, char base)
-{
-	int i = 1;
-
-	for (; base <= nb; i++)
-		nb /= base;
-	return (i);
-}
-
-int nbrlen(int nb)
-{
-	int i = 1;
-
-	if (nb < 0) {
-		i++;
-		nb *= -1;
-	}
-	for (; 10 <= nb; i++)
-		nb /= 10;
-	return (i);
-}
-
 int offset_sflag(char *str, char *flags)
 {
 	char *opt_str;
