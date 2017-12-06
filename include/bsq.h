@@ -14,8 +14,11 @@
 #define IS_CHR(val, chr) val == chr
 
 typedef struct {
-	int ind;
+	int lin;
+	int col;
 	int size;
 } bsq_result;
+
+bsq_result *find_result(int *map, int lin, int col);
 
 #endif /* !BSQ_H_ */

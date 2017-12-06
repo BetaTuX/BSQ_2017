@@ -8,7 +8,8 @@
 NAME	=	bsq
 
 SRC	=	src/main.c \
-		src/bsq.c
+		src/bsq.c \
+		src/map.c
 
 OBJ	=	$(SRC:.c=.o)
 

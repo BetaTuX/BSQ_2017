@@ -38,8 +38,17 @@ void verify_bsq(int *ans, int ind, int lin, int col)
 	if (ans[ind] == 0)
 		return;
 	ans[ind] = lowest_three_val(ans[ind + 1], ans[ind + col],\
-ans[ind + 1 + col]);
+ans[ind + 1 + col]) + 1;
 	return;
+}
+
+void display_bsq(int *map, char *buff, int lin, int col)
+{
+	bsq_result *ans = find_result(map, lin, col);
+
+	fill_buff(buff, ans, lin, col);
+	my_putstr(buff);
+	free(ans);
 }
 
 int *find_square(int fd, int file_size)
@@ -55,10 +64,10 @@ int *find_square(int fd, int file_size)
 	col = ((file_size - (nbrlen(lin) + 1)) - (lin - 1)) / lin;
 	map_beg = nbrlen(lin) + 1;
 	ans = init_map(&buff[map_beg], lin, col);
-	my_printf("%d:%d\n", col, lin);
 	for (int j = col - 2; 0 <= j; j--)
 		for (int i = lin - 2; 0 <= i; i--)
-			verify_bsq(&buff[map_beg], (i * col) + j, ans);
+			verify_bsq(ans, (i * col) + j, lin, col);
+	display_bsq(ans, &buff[map_beg], lin, col);
 	free(buff);
 	return (ans);
 }
