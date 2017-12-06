@@ -25,22 +25,28 @@ int pf_c(va_list vl, char *flags)
 
 int pf_s(va_list vl, char *flags)
 {
-	char *s = va_arg(vl, char *);
-	int flag_ans = 0;
+	char *tmp;
+	char *cat_str = flags;
+	int flag_ans = -1;
 
 	if (0 < my_strlen(flags)) {
-		flag_ans = offset_sflag(s, flags);
+		if (tmp = my_strstr(flags, "*")) {
+			cat_str = my_strcat(int_to_str(va_arg(vl, int)),\
+tmp = my_strpick(flags, tmp - flags, my_strlen(flags) - 1));
+			free(flags);
+			free(tmp);
+		}
+		flag_ans = offset_sflag(va_arg(vl, char *), cat_str);
 	}
-	free(flags);
-	if (s != 0 && flag_ans == 0) {
-		my_putstr(s);
-		return (my_strlen(s));
+	free(cat_str);
+	if (flag_ans == -1) {
+		return (my_putstr(va_arg(vl, char *)));
 	} else {
 		return (flag_ans);
 	}
 }
 
-int pf_S(va_list vl, char *flags)
+int pf_up_s(va_list vl, char *flags)
 {
 	char *s = va_arg(vl, char *);
 	int char_lim = my_strlen(s);

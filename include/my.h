@@ -11,6 +11,7 @@
 int unbrlen(unsigned int nb, char base);
 int nbrlen(int nb);
 char *convert_base(char const *nbr, char const *base_from, char const *base_to);
+char *int_to_str(int nb);
 int my_find_prime_sup(int nb);
 int my_getnbr_base(char const *str, char const *base);
 int my_getnbr(char const *str);
@@ -47,6 +48,7 @@ int my_strncmp(char const *s1, char const *s2, int n);
 char *my_strncpy(char *dest, char const *src, int n);
 char *my_strpick(char const *src, int start, int end);
 char *my_strstr(char const *str, char const *to_find);
+char *my_strstr_l(char const *str, char const *to_find, int ind_to_begin);
 char *my_strupcase(char *str);
 void my_swap(int *a, int *b);
 

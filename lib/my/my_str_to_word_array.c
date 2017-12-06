@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** CPool_Day08_2017
 ** File description:
-** Splits a string into words. Separators will all be non-alphanumeric characters.
+** Splits a string into words.
 */
 
 #include <stdlib.h>

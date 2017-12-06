@@ -1,8 +1,8 @@
 /*
-**
-**
-**
-**
+** EPITECH PROJECT, 2017
+** Printf lib 2017
+** File description:
+** printf header
 */
 
 #ifndef __MY_PF__
@@ -12,7 +12,7 @@
 
 #define IS_NUM(value) ('0' <= value && value <= '9')
 #define OPE_NUMBER 12
-#define FLAG_NUMBER 6
+#define FLAG_NUMBER 7
 
 typedef struct pf_type {
 	char sign;
@@ -24,10 +24,10 @@ int pf_id(va_list vl, char *flags);
 int pf_s(va_list vl, char *flags);
 int pf_b(va_list vl, char *flags);
 int pf_s(va_list vl, char *flags);
-int pf_S(va_list vl, char *flags);
+int pf_up_s(va_list vl, char *flags);
 int pf_mod(va_list vl, char *flags);
 int pf_x(va_list vl, char *flags);
-int pf_X(va_list vl, char *flags);
+int pf_x_up(va_list vl, char *flags);
 int pf_o(va_list vl, char *flags);
 int pf_u(va_list vl, char *flags);
 int pf_p(va_list vl, char *flags);

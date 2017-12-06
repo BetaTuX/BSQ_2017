@@ -14,15 +14,15 @@ const s_pf_type opes[OPE_NUMBER] = {\
 	{'d', &pf_id},\
 	{'b', &pf_b},\
 	{'x', &pf_x},\
-	{'X', &pf_X},\
+	{'X', &pf_x_up},\
 	{'u', &pf_u},\
 	{'o', &pf_o},\
 	{'p', &pf_p},\
-	{'S', &pf_S},\
+	{'S', &pf_up_s},\
 	{'%', &pf_mod}\
 };
 
-const char flags[FLAG_NUMBER] = {'-', '+', ' ', '0', '#', '.'};
+const char flags[FLAG_NUMBER] = {'-', '+', ' ', '0', '#', '.', '*'};
 
 int print_special(char c_sel, char *flags, va_list vl)
 {

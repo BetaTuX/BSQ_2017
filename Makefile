@@ -15,7 +15,7 @@ OBJ	=	$(SRC:.c=.o)
 
 CFLAGS	=	-I include/ -Wextra -Wall
 
-LIBDIR	=	lib/
+LIBDIR	=	lib/my
 
 LIBS	=	-L $(LIBDIR) -lmy
 
@@ -24,15 +24,15 @@ CC	=	gcc
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(MAKE) -C $(LIBDIR)my
+	$(MAKE) -C $(LIBDIR)
 	$(CC) $(OBJ) -o $(NAME) $(LIBS)
 
 clean:
-	$(MAKE) clean -C $(LIBDIR)my
+	$(MAKE) clean -C $(LIBDIR)
 	rm -f $(OBJ)
 
 fclean:	clean
-	$(MAKE) fclean -C $(LIBDIR)my
+	$(MAKE) fclean -C $(LIBDIR)
 	rm -f $(NAME)
 
 re:	fclean all

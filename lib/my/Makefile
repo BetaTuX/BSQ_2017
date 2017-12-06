@@ -15,7 +15,6 @@ all: 	$(NAME)
 
 $(NAME): 	$(OBJ)
 	ar rc $(NAME) $(OBJ)
-	cp $(NAME) ../
 
 $(OBJ):	$(SRC)
 	$(CC) -c $(SRC) $(CFLAG) -I ../../include

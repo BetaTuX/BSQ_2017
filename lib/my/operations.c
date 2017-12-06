@@ -28,7 +28,6 @@ int pf_b(va_list vl, char *flags)
 	if (my_strstr(flags, "#") != 0) {
 		my_putstr("0b");
 		chr_off += 2;
-	
 	}
 	free(flags);
 	return (my_putunbr_base(i, "01") + chr_off);
@@ -47,7 +46,7 @@ int pf_x(va_list vl, char *flags)
 	return (my_putunbr_base(i, "0123456789abcdef") + chr_off);
 }
 
-int pf_X(va_list vl, char *flags)
+int pf_x_up(va_list vl, char *flags)
 {
 	unsigned int i = va_arg(vl, unsigned int);
 	int chr_off = 0;

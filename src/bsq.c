@@ -60,6 +60,8 @@ int *find_square(int fd, int file_size)
 	int *ans = 0;
 
 	read(fd, buff, file_size);
+	if (buff == 0)
+		return (0);
 	lin = my_getnbr(buff);
 	col = ((file_size - (nbrlen(lin) + 1)) - (lin - 1)) / lin;
 	map_beg = nbrlen(lin) + 1;

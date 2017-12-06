@@ -36,3 +36,18 @@ char *my_strstr(char const *str, char const *to_find)
 	}
 	return (ans);
 }
+
+char *my_strstr_l(char const *str, char const *to_find, int ind_to_begin)
+{
+	char *ans = 0;
+
+	for (int i = ind_to_begin; 0 <= i; i--) {
+		ans = is_str_in_str_from_ind(str, to_find, i);
+		if (ans != 0)
+			break;
+	}
+	if (ans == 0)
+		return ((char *)str);
+	else
+		return (ans + 1);
+}

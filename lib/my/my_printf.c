@@ -18,16 +18,16 @@ char *get_flags(char const *str, int *ind)
 	int start = *ind;
 	char *ans = malloc(sizeof(char));
 
-	for (; str[*ind] != '\0' && (is_a_flag(str[*ind]) || IS_NUM(str[*ind]))\
-; *ind += 1);
+	for (;str[*ind] != '\0' && (is_a_flag(str[*ind]) || IS_NUM(str[*ind]));\
+*ind += 1);
 	if (is_a_ope(str[*ind]) && start != *ind) {
 		free(ans);
 		ans = my_strpick(str, start, *ind);
 	} else if (!is_a_ope(str[*ind]) && str[*ind] != '\0'){
-		ans[0] = '\0'; 
+		ans[0] = '\0';
 		*ind = start - 1;
 	} else {
-		ans[0] = '\0'; 
+		ans[0] = '\0';
 		*ind = start;
 	}
 	return (ans);
@@ -49,7 +49,7 @@ int print_fstr(char *str, va_list vl)
 		chr_nb += j - chr_start;
 		if (str[j] == '%') {
 			j++;
-			flags = get_flags(str, &j); 
+			flags = get_flags(str, &j);
 			chr_nb += print_special(str[j], flags, vl);
 		}
 	}
