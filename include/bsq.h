@@ -20,5 +20,11 @@ typedef struct {
 } bsq_result;
 
 bsq_result *find_result(int *map, int lin, int col);
+int *find_square(int fd, int file_size);
+void display_bsq(int *map, char *buff, int lin, int col);
+int lowest_three_val(int v1, int v2, int v3);
+int *init_map(char *buff, int lin, int col);
+void fill_buff(char *buff, bsq_result *ans, int col);
+void verify_bsq(int *ans, int ind, int col);
 
-#endif /* !BSQ_H_ */
+#endif

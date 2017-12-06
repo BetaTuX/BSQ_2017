@@ -22,7 +22,7 @@ static void process_diff(int item, int act_lin, int act_col, bsq_result *result)
 	}
 }
 
-void fill_buff(char *buff, bsq_result *ans, int lin, int col)
+void fill_buff(char *buff, bsq_result *ans, int col)
 {
 	if (ans == 0)
 		return;

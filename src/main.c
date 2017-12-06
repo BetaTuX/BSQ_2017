@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include "my_printf.h"
 #include "my.h"
+#include "bsq.h"
 
 int main(int argc, char **argv)
 {
