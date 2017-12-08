@@ -22,6 +22,16 @@ static void process_diff(int item, int act_lin, int act_col, bsq_result *result)
 	}
 }
 
+int *init_map(char *buff, int lin, int col)
+{
+	int *ans = malloc(lin * col * sizeof(int));
+
+	for (int i = 0; i < lin; i++)
+		for (int j = 0; j < col; j++)
+			ans[j + (i * col)] = (buff[j + (i * col) + i] == '.');
+	return (ans);
+}
+
 void fill_buff(char *buff, bsq_result *ans, int col)
 {
 	if (ans == 0)
@@ -38,8 +48,8 @@ bsq_result *find_result(int *map, int lin, int col)
 	ans->size = 0;
 	ans->col = 0;
 	ans->lin = 0;
-	for (int j = 0; j < col; j++)
-		for (int i = 0; i < lin; i++)
+	for (int i = 0; i < lin; i++)
+		for (int j = 0; j < col; j++)
 			process_diff(map[(i * col) + j], i, j, ans);
 	return (ans);
 }

@@ -2,3 +2,7 @@
 *.a
 *.o
 *.sh
+results
+mouli_maps
+mouli_maps_solved
+result
