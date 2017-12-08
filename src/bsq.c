@@ -47,6 +47,10 @@ void execute_bsq(int *arr, int lin, int col)
 		i -= (i != 0);
 		j -= (j != 0);
 	}
+	for (int ite = i; 0 <= ite; ite--)
+		verify_bsq(arr, (ite * col) + j, col);
+	for (int ite = j; 0 <= ite; ite--)
+		verify_bsq(arr, (i * col) + ite, col);
 }
 
 void display_bsq(int *map, char *buff, int lin, int col)
