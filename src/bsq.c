@@ -58,7 +58,7 @@ void display_bsq(int *map, char *buff, int lin, int col)
 	bsq_result *ans = find_result(map, lin, col);
 
 	fill_buff(buff, ans, col);
-	write(1, buff, lin * col);
+	my_putstr(buff);
 	free(ans);
 }
 
