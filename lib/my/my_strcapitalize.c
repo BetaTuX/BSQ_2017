@@ -42,4 +42,3 @@ char *my_strcapitalize(char *str)
 			charlowcase(&str[i]);
 	return (str);
 }
-
